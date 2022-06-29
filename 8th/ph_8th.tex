@@ -1,0 +1,212 @@
+\documentclass[a4paper,11pt]{article}
+%Premeable
+	\input{expTemplate.tex}
+%Header
+	\lhead{%
+		\includegraphics[height=3.2em]{PKUPhy.png}
+		\vspace{-3ex}
+		}
+	\rhead{%
+		\itshape\small
+		\begin{tabular}{rr}
+			\multicolumn{2}{r}{赵启渊} \\[.3em]
+			学号：   & 2000011153 \\[.2em]
+		\end{tabular}\hspace{-1em}
+		}
+%Title
+	\title{\textit{\large 实验十九}\\[2mm]
+		\textbf{\LARGE 分光计的调节和掠入射法测量折射率}}
+	\author{\textit{赵启渊} 2000011153}
+	\date{}
+%Miscellaneous
+	\newcommand{\tabindent}{\hspace{2em}}
+%FourierTransform
+	\newcommand{\ftransform}{\xlongrightarrow{\ \mathscr F\ }}
+	\newcommand{\iftransform}{\xlongrightarrow{\ \mathscr F^{-1}\ }}
+	\usepackage{gensymb}
+
+\begin{document}
+	\vspace*{1cm}
+	
+	\vspace*{1cm}
+	
+	\begin{center}
+		\Huge{\textbf{基础物理实验报告}}
+		
+		\Large{分光计的调节和掠入射法测量折射率}
+	\end{center}
+	
+	\vspace*{2cm}
+	
+	\begin{table}[h]
+		\centering	
+		\begin{Large}
+			\begin{tabular}{p{3cm} p{7cm}<{\centering}}
+				姓\qquad 名: & 赵启渊 \\
+				\hline
+				学\qquad 院: & 工学院 \\
+				\hline
+				学\qquad 号: & 2000011153 \\
+				\hline
+				分\qquad 组: & 第1组7号 \\
+				\hline
+				日\qquad 期: & 2022年4月13日 \\
+				\hline
+				指导教师: & 刘春玲\ 姜稼阳\\
+				\hline
+			\end{tabular}
+		\end{Large}
+	\end{table}
+	
+\maketitle
+\thispagestyle{fancy}
+\section{数据及处理}
+\subsection{测定玻璃三棱镜顶角}
+	先调节分光计，使得望远镜接收平行光，望远镜光轴和仪器转轴垂直。然后先后使望远镜光轴和棱镜AB面、AC面垂直，每次记下左右游标读数然后计算。将望远镜光轴和棱镜AB面垂直时，左右游标读数记为$ \theta_{1}^{\prime } $和$ \theta_{1}^{\prime \prime} $；将望远镜光轴和棱镜AC面垂直时，左右游标读数记为$ \theta_{2}^{\prime } $和$ \theta_{2}^{\prime \prime} $。测量得到下面数值
+
+	\begin{table}[H]
+		\centering\caption{测量$\theta_{1}^{\prime }$,$\theta_{1}^{\prime \prime}$,$\theta_{2}^{\prime } $,$\theta_{2}^{\prime \prime } $的数据表}
+		\small
+		\begin{tabularx}{.85\linewidth}{C{1} *5{C{.8}}}
+			\toprule
+			\textbf{项目} &
+			$\theta_{1}^{\prime } / \si{}$ &
+			$\theta_{1}^{\prime \prime}/ \si{}$ &
+			$\theta_{2}^{\prime }/ \si{}$ &
+			$\theta_{2}^{\prime \prime} / \si{}$ & \\
+			\midrule
+			读数     & $ 98^{\degree}38^{\prime} $  & $ 278^{\degree}36^{\prime} $ & $ 218^{\degree}38^{\prime} $ &  $ 38^{\degree}35^{\prime} $    \\
+			\bottomrule
+		\end{tabularx}
+		\vspace{3ex}
+	\end{table}\noindent%
+    计算有
+    $$ \psi = \frac{1}{2} * [(\theta_{2}^{\prime } - \theta_{1}^{\prime }) + ( \theta_{2}^{\prime \prime } -\theta_{1}^{\prime \prime } )] $$
+    当$\phi $移过刻度盘中的$360^{\degree} $时，$\theta_{2}^{\prime } - \theta_{1}^{\prime } = 360^{\degree} + \theta_{2}^{\prime } - \theta_{1}^{\prime }$ ,因此有\\
+    $$ \psi = \frac{1}{2} * [(\theta_{2}^{\prime } - \theta_{1}^{\prime }) + ( 360^{\degree} +\theta_{2}^{\prime \prime } -\theta_{1}^{\prime \prime } )] $$
+    $$ = \frac{1}{2} * (120^{\degree}00^{\prime} + 119^{\degree}59^{\prime}) $$
+    $$ = 119^{\degree}59^{\prime}30^{\prime \prime}$$
+    因此计算顶角A有
+    $$  A = 180^{\degree} - \psi $$
+    $$  A = 60^{\degree}00^{\prime}30^{\prime \prime} $$
+    在不增大误差的前提下可以写成
+    $$  A = 60.01^{\degree} $$
+    
+    计算不确定度有
+    $$ \sigma_{A} = \sigma_{\psi} $$
+    $$ \sigma_{\psi} = \sqrt{(\dfrac{\partial \psi}{\partial \theta_{1}^{\prime }} * \sigma_{\theta_{1}^{\prime }})^{2} + (\dfrac{\partial \psi}{\partial \theta_{1}^{\prime \prime}} * \sigma_{\theta_{1}^{\prime \prime}})^{2} + (\dfrac{\partial \psi}{\partial \theta_{2}^{\prime }} * \sigma_{\theta_{2}^{\prime }})^{2} + (\dfrac{\partial \psi}{\partial \theta_{2}^{\prime \prime}} * \sigma_{\theta_{2}^{\prime \prime}})^{2} }$$
+    $$ = \frac{1}{2} * \sqrt{(  \sigma_{\theta_{1}^{\prime }})^{2} + (\sigma_{\theta_{1}^{\prime \prime}})^{2} + ( \sigma_{\theta_{2}^{\prime }})^{2} + (\sigma_{\theta_{2}^{\prime \prime}})^{2}} $$
+    又因为
+    $$ \sigma_{\theta_{1}^{\prime }} = \frac{e}{\sqrt{3}} $$
+    $$ \sigma_{\theta_{1}^{\prime \prime}} = \frac{e}{\sqrt{3}} $$
+    $$ \sigma_{\theta_{2}^{\prime }} = \frac{e}{\sqrt{3}} $$
+    $$ \sigma_{\theta_{1}^{\prime \prime }} = \frac{e}{\sqrt{3}} $$
+    $$ e = 1^{\prime} = \frac{1}{60}^{\degree} $$
+    所以有
+    $$ \sigma_{A} = (0.01)^{\degree} $$
+    所以有
+    $$ A \pm \sigma_{A} = (60.01 \pm 0.01 )^{\degree} $$
+    
+
+
+
+\subsection{用掠入射法测定三棱镜折射率}
+    使钠光灯大体位于AB光学面的延长线上，找到AC面的明暗分界线，然后先使望远镜$PP^{\prime} $线和分界线对准，读数。然后使望远镜与AC面垂直，读数。每次记下左右游标读数然后计算。$PP^{\prime} $线和分界线对准时，左右游标读数记为$ \theta_{3}^{\prime } $和$ \theta_{3}^{\prime \prime} $；将望远镜光轴和棱镜AC面垂直时，左右游标读数记为$ \theta_{4}^{\prime } $和$ \theta_{4}^{\prime \prime} $。测量得到下面数值
+	\begin{table}[H]
+		\centering\caption{测量$\theta_{3}^{\prime }$,$\theta_{3}^{\prime \prime}$,$\theta_{4}^{\prime } $,$\theta_{4}^{\prime \prime } $的数据表}
+		\small
+		\begin{tabularx}{.85\linewidth}{C{1} *5{C{.8}}}
+			\toprule
+			\textbf{项目} &
+			$\theta_{3}^{\prime } / \si{}$ &
+			$\theta_{3}^{\prime \prime}/ \si{}$ &
+			$\theta_{4}^{\prime }/ \si{}$ &
+			$\theta_{4}^{\prime \prime} / \si{}$ & \\
+			\midrule
+			读数     & $ 222^{\degree}30^{\prime} $  & $ 42^{\degree}30^{\prime} $ & $ 181^{\degree}04^{\prime} $ &  $ 1^{\degree}04^{\prime} $    \\
+			\bottomrule
+		\end{tabularx}
+		\vspace{3ex}
+	\end{table}\noindent%
+    计算有
+    $$ \phi = \frac{1}{2} * [(\theta_{3}^{\prime } - \theta_{4}^{\prime }) + ( \theta_{3}^{\prime \prime } -\theta_{4}^{\prime \prime } )] $$
+    $$ = \frac{1}{2} * (41^{\degree}26^{\prime} + 41^{\degree}26^{\prime}) $$
+    $$ = 41^{\degree}26^{\prime}$$
+    在不加大误差的情况下变换单位可以得到
+    $$ \psi = 119.99^{\degree}$$
+	$$ A = 60.01^{\degree}$$
+	$$ \phi = 41.43^{\degree}$$
+	因此又有
+	$$ n = \sqrt{1+ (\dfrac{\cos A + \sin \phi}{\sin A})^2} $$
+	$$ n = 1.673 $$
+	
+	计算不确定度有
+	$$ \sigma_{n} = \sqrt{(\dfrac{\partial n}{\partial A} * \sigma_{A})^{2} + (\dfrac{\partial n}{\partial \phi} * \sigma_{\phi})^{2} }$$
+	$$ = \dfrac{\cos A + \sin \phi}{(\sin A)^2 *\sqrt{1+(\dfrac{\cos A + \sin \phi}{\sin A})^2}} * \sqrt{(\dfrac{1+ \cos A *\sin \phi}{\sin A}*\sigma_{A})^{2} + (\cos \phi * \sigma_{\phi} )^2}$$
+	同理计算$\sigma_{\phi}$有
+	$$ \sigma_{\phi} = \frac{1}{2} * \sqrt{(  \sigma_{\theta_{3}^{\prime }})^{2} + (\sigma_{\theta_{3}^{\prime \prime}})^{2} + ( \sigma_{\theta_{4}^{\prime }})^{2} + (\sigma_{\theta_{4}^{\prime \prime}})^{2}} $$
+	又因为
+	$$ \sigma_{\theta_{3}^{\prime }} = \frac{e}{\sqrt{3}} $$
+	$$ \sigma_{\theta_{3}^{\prime \prime}} = \frac{e}{\sqrt{3}} $$
+	$$ \sigma_{\theta_{4}^{\prime }} = \frac{e}{\sqrt{3}} $$
+	$$ \sigma_{\theta_{4}^{\prime \prime }} = \frac{e}{\sqrt{3}} $$
+	$$ e = 1^{\prime} = \frac{1}{60}^{\degree} $$
+	所以有
+	$$\sigma_{\phi} = \frac{e}{\sqrt{3}} = 0.01$$
+	所以有
+	$$ \sigma_{n} = 0.016$$
+	$$ n \pm \sigma_{n} = 1.673 \pm 0.016  $$
+
+
+
+\section{分析与讨论}
+\subsection{分析实验中测量顶角的误差来源}
+\begin{enumerate}
+	\item 顶角的不确定度关系有
+	$$ = \sqrt{(\dfrac{\partial \psi}{\partial \theta_{1}^{\prime }} * \sigma_{\theta_{1}^{\prime }})^{2} + (\dfrac{\partial \psi}{\partial \theta_{1}^{\prime \prime}} * \sigma_{\theta_{1}^{\prime \prime}})^{2} + (\dfrac{\partial \psi}{\partial \theta_{2}^{\prime }} * \sigma_{\theta_{2}^{\prime }})^{2} + (\dfrac{\partial \psi}{\partial \theta_{2}^{\prime \prime}} * \sigma_{\theta_{2}^{\prime \prime}})^{2} }$$
+	$$ = \frac{1}{2} * \sqrt{(  \sigma_{\theta_{1}^{\prime }})^{2} + (\sigma_{\theta_{1}^{\prime \prime}})^{2} + ( \sigma_{\theta_{2}^{\prime }})^{2} + (\sigma_{\theta_{2}^{\prime \prime}})^{2}} $$
+	并且有
+	$$ \sigma_{\theta_{1}^{\prime }} = \frac{e}{\sqrt{3}} $$
+	$$ \sigma_{\theta_{1}^{\prime \prime}} = \frac{e}{\sqrt{3}} $$
+	$$ \sigma_{\theta_{2}^{\prime }} = \frac{e}{\sqrt{3}} $$
+	$$ \sigma_{\theta_{1}^{\prime \prime }} = \frac{e}{\sqrt{3}} $$
+	$$ e = 1^{\prime} = \frac{1}{60}^{\degree} $$
+	从上面的分析可以看出，分光计游标的允差会给实验带来一定的系统误差。而且由于本次实验仅仅测量了一次，读角度也会有随机误差的影响。
+	\item 虽然在本实验中，我们已经进行了分光计的调节，但在实际情况下，我们不可能将望远镜光轴与仪器转轴调成严格垂直，将三棱镜主截面与仪器转轴调成严格垂直。这些因素都会带来一定的系统误差。
+	\item 在调节望远镜光轴和三棱镜主截面垂直时，虽然我们进行了调焦，但我们观察到的绿色十字总是有一定宽度的。因此实验操作上的对准，并不是严格对准，这也会给实验结果带来系统误差。
+	\\
+\end{enumerate}
+	
+
+	
+\subsection{分析实验中测量折射率的误差来源}
+\begin{enumerate}
+	\item 	折射率的不确定度关系有
+	$$  = \sqrt{(\dfrac{\partial n}{\partial A} * \sigma_{A})^{2} + (\dfrac{\partial n}{\partial \phi} * \sigma_{\phi})^{2} }$$
+	$$ = \dfrac{\cos A + \sin \phi}{(\sin A)^2 *\sqrt{1+(\dfrac{\cos A + \sin \phi}{\sin A})^2}} * \sqrt{(\dfrac{1+ \cos A *\sin \phi}{\sin A}*\sigma_{A})^{2} + (\cos \phi * \sigma_{\phi} )^2}$$
+	因此可以计算
+	$$(\dfrac{1+ \cos A *\sin \phi}{\sin A})^{2} = 2.36 * 10^{-4}$$
+	$$(\cos \phi )^2 = 5.62 * 10^{-5} $$
+	从公式我们可以分析，上述提到的对顶角测量有影响的因素全部都对折射率的测量有相对大的影响。并且对$\phi$测量的影响也会相对小地但不可忽略地影响折射率的测量。
+	\item  AC面明暗交替的线在观测中并不十分明显，并且有一定的宽度，在对准时会产生一定的干扰，在测量的过程中会引起一定的随机误差。
+	\item  分光计游标的允差会给$\phi$测量带来一定的系统误差。而且由于本次实验仅仅测量了一次，读角度也会有随机误差的影响。
+	\item 原本在实验中还会有角度偏心差的影响，但由于我们使用左右游标读数的方法，这种偏心差会得以消除。
+	\item 测量出射极限角时，涉及到当望远镜光轴和棱镜AC面垂直时角度的测量，正如上述所说，虽然我们进行了调焦，但我们观察到的绿色十字总是有一定宽度的。因此实验操作上的对准，并不是严格对准，这也会再次给实验结果带来系统误差。 \\
+\end{enumerate}
+
+
+	
+\section{收获与感想}
+\begin{enumerate}
+	\item 在做光学实验时，光路的校准是一个非常重要的内容。在校准的过程之中一定要遵守先校准的元件就不可以再次调节的原则，依次按顺序校准。这就要求在试验方案的设计上充分考虑每个光学元件的特性与校准的难易程度，设计出合理的校准方案。
+	\item 选择测量方案时，往往可以通过巧妙的设计来抵消一些误差的影响。平时应该积累类似左右游标读数的方法这样的实验思路。
+	\item 分光计在光学实验中是一种经常使用的仪器，要多多练习，熟练掌握分光计的调节方法和使用策略。
+	\item 通过本次实验，我也了解了最小偏向角法测量折射率。但在最小偏向角法实验中对最小偏向角位置的判断具有一定的主观性，这会给实验带来很大的随机误差。
+	\item 在光学实验中，可以灵活地使用毛玻璃来增加漫反射，从而增强我们想看到的像。
+\end{enumerate}
+
+
+
+	\vfill\noindent\itshape\footnotesize
+	\hfill Last edited: \today\ \copyright\ 赵启渊
+\end{document}

@@ -1,0 +1,67 @@
+\documentclass[a4paper,11pt]{article}
+%Premeable
+	\input{expTemplate.tex}
+%Header
+	\lhead{%
+		\includegraphics[height=3.2em]{PKUPhy.png}
+		\vspace{-3ex}
+		}
+	\rhead{%
+		\itshape\small
+		\begin{tabular}{rr}
+			\multicolumn{2}{r}{赵启渊} \\[.3em]
+			学号：   & 2000011153 \\[.2em]
+		\end{tabular}\hspace{-1em}
+		}
+%Title
+	\title{\textit{\large 实验二十六}\\[2mm]
+		\textbf{\LARGE 真空镀膜}}
+	\author{\textit{赵启渊} 2000011153}
+	\date{}
+%Miscellaneous
+	\newcommand{\tabindent}{\hspace{2em}}
+%FourierTransform
+	\newcommand{\ftransform}{\xlongrightarrow{\ \mathscr F\ }}
+	\newcommand{\iftransform}{\xlongrightarrow{\ \mathscr F^{-1}\ }}
+	\usepackage{gensymb}
+
+\begin{document}
+	
+	
+\maketitle
+\thispagestyle{fancy}
+\begin{enumerate}
+	\item 简要概述真空的定义及特点。\\
+	解：真空泛指低于一个大气压的气体充满空间的状态。\\
+	特点：
+	\begin{enumerate}
+		\item 空间气体分子密度极小。
+		\item 气体分子或带电粒子的平均自由程极长。
+		\item 气体分子与固体表面碰撞概率极低。
+	\end{enumerate}
+	
+	
+	\item 例举一项真空技术的重要应用。 \\
+	解：真空技术用于高能离子加速器、大规模集成电路、表面科学、薄膜技术、材料工艺和空间技术中。
+	
+	\item 例举一项薄膜技术的重要应用。\\
+	解：薄膜技术在电子元器件、集成光学、电子技术、红外技术、激光技术以及航天技术和光学仪器等各个领域都得到了广泛的应用。尤其是光学元件中的应用，如利用增透膜等薄膜，改变光学元件本来的光学性质。
+	\item 选择真空获得和测量设备时要考虑哪些基本性能指标？\\
+	解：选择真空获得设备时要考虑抽气速率、极限压强、启动压强等参数。抽气速率是指单位时间内泵排出的气体体积。极限压强是指当不存在被抽气体负荷时，泵口处达到的最低压强。启动压强是指真空泵可以启动的最高压强。\\
+	选择真空测量设备时要考虑测量范围、分度值、灵敏度、线性知识范围等参数。
+	\item 制备电阻加热器时，在形状和材料方面应有哪些基本要求？\\
+	解：取30cm的钼丝，打磨掉外面的氧化层，在直径为5mm的杆上绕成螺线管形状，长度约15mm，将杆逆时针旋出。取30mm的铜漆包线，砂纸打磨掉外面的漆，对折放入钼的螺旋管中。形状如上面所制，材料为钼、铜。
+	
+	\item 真空室放气后短时间内重复实验，获得同样真空度的时间一般会明显缩短，为什么？\\
+	解：真空泵会首先启动机械泵，待真空度达到200Pa左右时，开启分子泵。放气后短时间内，真空室真空度还没有恢复到初始状态，减少了机械泵工作时间。有下面分析，放气一般会使真空室处于低真空度状态，此时小于一个大气压，但大于200Pa。在低真空度情况下，有$$t = \dfrac{V}{S} * ln(\frac{p_1}{p_2})$$
+	V为真空室体积，S为抽气速度，$p_1$为初始气压，$p_2$为最终气压。在V、S、$p_2$不变的情况下，$p_1$减少则抽气所用的时间t减少。
+	\item 通过查看其他人该实验的记录与分析，发现实际测量的抽⽓阶段的压强－时间曲线与拟合曲线在后端符合得很好，但在曲线前端出现了较大偏差，试分析原因？\\
+	解：通过分析拟合模型的建立发现，模型将体系在每个时刻视为平衡态。但由于抽气初期，体系变化很快，并不处于
+	平衡态，⽆法定义热⼒学量，虽然是近平衡态的输运过程，但仍然会存在较⼤误差。
+\end{enumerate}
+
+
+
+	\vfill\noindent\itshape\footnotesize
+	\hfill Last edited: \today\ \copyright\ 赵启渊
+\end{document}

@@ -1,0 +1,97 @@
+%Chinese
+	\usepackage[UTF8,fontset=fandol]{ctex}
+	\usepackage{xeCJK}
+	\usepackage[datesep=/]{datetime2}
+	\DeclareTextFontCommand{\textbf}{\sffamily}
+%Presenting
+	\usepackage[table]{xcolor}
+	\usepackage{graphicx}
+	\usepackage[font={sf}]{caption}
+	\usepackage[above]{placeins}
+	\usepackage{float,wrapfig}
+	\usepackage{tabularx,array,booktabs,multirow,bigstrut}
+	\newcolumntype{C}[1]{>{\hsize=#1\hsize%
+		\centering\arraybackslash}X}
+	\newcommand{\minitab}[2][l]{%
+		\begin{tabular}{#1}#2\end{tabular}}
+%MathSetting
+	\let\latexointop\ointop
+	\usepackage{amsmath,bm,amssymb,esint,extarrows}
+	\usepackage{upgreek,textcomp,mathrsfs}
+	\usepackage[only,sslash]{stmaryrd}
+	\usepackage{nicefrac,eqnarray}
+%	\usepackage{amsthm}
+	\usepackage{mathtools,physics,siunitx}
+	\usepackage{stackengine,titling,varwidth}
+	\usepackage{tikz}
+	\usepackage{resizegather,empheq}
+	\usetagform{default}
+	\usepackage{calligra,fourier-orns}
+	% Keep \oint unchanged by esint
+	\let\ointop\undefined
+	\let\ointop\latexointop
+	% Define a scriptr 
+	\DeclareMathAlphabet{\mathcalligra}{T1}{calligra}{m}{n}
+	\DeclareFontShape{T1}{calligra}{m}{n}{<->s*[2.2]callig15}{}
+	\newcommand{\scriptr}{\mathcalligra{r}\,}
+	\newcommand{\rvector}{\pmb{\mathcalligra{r}}\,}
+	% Useful shorthand
+	\DeclarePairedDelimiter\ave{\langle}{\rangle}
+	\newcommand\inlineeqno{\stepcounter{equation}\ (\theequation)}
+	\newcommand{\sinc}{\operatorname{sinc}}
+	\newcommand{\mbb}[1]{\mathbb{#1}}
+	\newcommand{\mrm}[1]{\mathrm{#1}}
+	\newcommand{\mcal}[1]{\mathcal{#1}}
+	% Scaling and positioning
+	\newcommand\scalemath[2]{\scalebox{#1}{\mbox{\ensuremath{\displaystyle #2}}}}
+	\newcommand\raisemath[2]{\raisebox{#1\depth}{${#2}$}}
+	\empheqset{box=\bbox}
+	% Presenting
+	\newcommand*\bbox[1]{\fbox{\hspace{1em}\addstackgap[5pt]{#1}\hspace{1em}}}
+	\sisetup{%
+		redefine-symbols=false,%
+		separate-uncertainty=true,%
+		range-phrase=\,\textasciitilde\,,%
+		arc-separator = \,}
+	\allowdisplaybreaks[2]
+%ParagraphSetting
+	\setlength{\parskip}{.3\baselineskip}
+	\usepackage[defaultlines=2,all]{nowidow}
+	\postdisplaypenalty=50
+%PageSetting
+	\usepackage[colorlinks=true,linkcolor=blue]{hyperref}
+	\usepackage[vmargin={4cm,5cm},hmargin=3cm,%
+		footnotesep=\baselineskip]{geometry}
+	\usepackage[bottom]{footmisc}
+	\usepackage{changepage}
+	% Autoref names
+	\renewcommand{\tableautorefname}{\tablename}
+	\renewcommand{\figureautorefname}{\figurename}
+	% List settings
+	\usepackage{enumitem}
+	\setlist{itemsep=0pt,topsep=0pt,labelindent=\parindent,leftmargin=0pt,itemindent=*}
+	% Some redefined lengths
+	\setlength{\headsep}{2.2cm}
+	\setlength{\droptitle}{-2.2cm}
+	\setlength{\footnotesep}{3\parskip}
+	% Header
+	\usepackage{fancyhdr,lastpage}
+	\pagestyle{fancy}
+	\fancyhf{}
+	\cfoot{--\ \thepage\,/\,\pageref{LastPage} \ --}
+	\renewcommand{\headrulewidth}{0.1pt}
+	\renewcommand{\headrule}{
+		\vbox to 2pt{
+		\hbox to \headwidth{\dotfill}\vss}}
+	% Separator
+	\newcommand{\newparagraph}{\pagebreak[3]\noindent%
+		\hfil
+		~\raisebox{-4pt}[10pt][10pt]{\decofourright~~~~~~~~\decofourleft}~ %
+		\par
+	}
+%TitleSettings
+	\pretitle{\begin{center}}
+	\posttitle{\par\end{center}\vspace{-6mm}}
+	\predate{}
+	\postdate{\vspace{-4mm}}
+	
