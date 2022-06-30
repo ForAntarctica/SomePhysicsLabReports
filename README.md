@@ -1,5 +1,4 @@
 # SomePhysicsLabReports
----
 **lab reports for fundamental physics experiments @ PKU**
 
 **北京大学 基础物理实验报告**
